@@ -31,7 +31,9 @@
 
 ### Key Insight
 -Understanding File Handling in C.
+
 -Error Handling.
+
 -Working with File Modes.
 
 
