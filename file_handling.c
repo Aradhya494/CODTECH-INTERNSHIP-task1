@@ -1,50 +1,52 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 
-void writeToFile(const char *filename) {
-    FILE *fp = fopen(filename, "w");
+void writeToFile() {
+    FILE *fp = fopen("data.txt", "w");  // Create or overwrite
     if (fp == NULL) {
-        printf("Error opening file for writing.\n");
+        printf("Error opening file!\n");
         return;
     }
-    fprintf(fp, "This is the first line written to the file.\n");
-    fprintf(fp, "This is the second line.\n");
+    char text[100];
+    printf("Enter text to write to file: ");
+    getchar(); // consume newline
+    fgets(text, sizeof(text), stdin);
+    fputs(text, fp);
     fclose(fp);
-    printf("Data written to file successfully.\n");
+    printf("Data written successfully.\n");
 }
 
-void readFile(const char *filename) {
-    FILE *fp = fopen(filename, "r");
-    char ch;
-
+void readFromFile() {
+    FILE *fp = fopen("data.txt", "r");  
     if (fp == NULL) {
-        printf("Error opening file for reading.\n");
+        printf("File does not exist or can't be opened.\n");
         return;
     }
-
-    printf("\nContents of the file:\n");
+    char ch;
+    printf("File contents:\n");
     while ((ch = fgetc(fp)) != EOF) {
         putchar(ch);
     }
     fclose(fp);
 }
 
-void appendToFile(const char *filename) {
-    FILE *fp = fopen(filename, "a");
+void appendToFile() {
+    FILE *fp = fopen("data.txt", "a");  
     if (fp == NULL) {
-        printf("Error opening file for appending.\n");
+        printf("Error opening file!\n");
         return;
     }
-    fprintf(fp, "This line is appended to the file.\n");
+    char text[100];
+    printf("Enter text to append: ");
+    getchar(); 
+    fgets(text, sizeof(text), stdin);
+    fputs(text, fp);
     fclose(fp);
-    printf("Data appended to file successfully.\n");
+    printf("Data appended successfully.\n");
 }
 
 int main() {
-    const char *filename = "example.txt";
     int choice;
-
     while (1) {
         printf("\n----- File Handling Menu -----\n");
         printf("1. Write to File (Create/Overwrite)\n");
@@ -53,27 +55,23 @@ int main() {
         printf("4. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
-        getchar();  
 
         switch (choice) {
             case 1:
-                writeToFile(filename);
+                writeToFile();
                 break;
             case 2:
-                readFile(filename);
+                readFromFile();
                 break;
             case 3:
-                appendToFile(filename);
+                appendToFile();
                 break;
             case 4:
-                printf("Exiting program.\n");
+                printf("Exiting...\n");
                 exit(0);
             default:
-                printf("Invalid choice! Please try again.\n");
+                printf("Invalid choice. Try again.\n");
         }
     }
-
     return 0;
 }
-
-
