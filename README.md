@@ -2,7 +2,7 @@
 
 **Company:** CODETECH IT SOLUTIONS.
 
-**ID:** CT04DF69.
+**INTERN ID:** CT04DF69.
 
 **Domain:** C Programming.
 
