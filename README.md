@@ -13,6 +13,7 @@
 ## Overview of the Project
 
 ### Project: File Handling Program
+![Image](https://github.com/user-attachments/assets/da6847a8-4887-4a51-bbee-bd7d0427bc29)
 
 ### Objective
 > The objective of this project is to demonstrate file handling operations in C language, including creating, reading, writing, and appending data to a file.
