@@ -13,6 +13,8 @@
 ## Overview of the Project
 
 ### Project: File Handling Program
+
+### Output
 ![Image](https://github.com/user-attachments/assets/4db4326f-719d-4cfd-9969-a2897fa6b335)
 
 ### Objective
